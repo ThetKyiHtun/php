@@ -8,7 +8,7 @@
 <body>
     <?php
     function sayHi(){
-        echo "Hello";
+        echo "Hello, I am a PHP function.<br>";
     }
     sayHi();
     echo "<br>";
