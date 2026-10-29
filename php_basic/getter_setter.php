@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+        class Movie {
+            public $title;
+            public $director;
+            private $rating;
+
+            function __construct($title, $director, $rating){
+                $this->title = $title;
+                $this->director= $director;
+                $this->rating = $rating;
+            }
+
+            function getRating() {
+                return $this->rating;
+            }
+
+            function setRating($rating) {
+                if ($rating == "G" || $rating == "PG" || $rating == "PG-13" || $rating == "R" || $rating == "NR") {
+                    $this->rating = $rating;
+                } else {
+                    $this->rating = "NR";
+                }
+            }
+        }
+        $avengers = new Movie("Avengers", "Joss Whedon", "PG-13");
+        $avengers->setRating("Dog");
+        echo $avengers->getRating();
+    ?>
+</body>
+</html>
